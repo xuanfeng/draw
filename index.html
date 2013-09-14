@@ -1,0 +1,108 @@
+
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+
+	<title>画图板</title>
+	<script src='js/jquery.js'></script>
+	<script src='js/draw.js'></script>
+	<script src='js/storage.js'></script>
+	<script src='js/main.js'></script>
+	
+	<link href= 'css/canvas.css' type="text/css" rel="Stylesheet"/>
+
+</head>
+<body>
+<div id="draw">
+
+		<div id="logo">多贝绘画板</div>
+
+		<ul class="draw_controller cf">
+			<li onclick="draw_graph('pencil',this)" class = 'border_nochoose' title = '铅笔'></li>
+			<li onclick="draw_graph('handwriting',this)" class = 'border_nochoose' title = '涂鸦'></li>
+			<li onclick="showLineSize(this)" class = 'border_nochoose line' title = '线条大小'></li>
+			<li onclick="showColor(this)" class = 'border_nochoose' id="chooseColor" title = '选择颜色'></li>
+			<li onclick="draw_graph('rubber',this)" class = 'border_nochoose' title = '橡皮擦'></li>
+
+			<span>|</span>
+
+			<li onclick="draw_graph('line',this);" class = 'border_nochoose' title = '画直线'></li>
+			<li onclick="draw_graph('square',this)" class = 'border_nochoose' title = '方形'></li>
+			<li onclick="draw_graph('circle',this)" class = 'border_nochoose' title = '圆'></li>
+			<li onclick="fill(this)" class = 'border_nochoose' title = '填充前景'></li>
+
+			<span>|</span>
+
+			<li onclick="cancel(this)" class = 'border_nochoose' title = '撤销上一个操作'></li>
+			<li onclick="next(this)" class = 'border_nochoose' title = '重做上一个操作'></li>	
+			<li onclick="clearContext('1')" class = 'border_nochoose' title = '清屏'></li>
+			<li onclick="save()" class = 'border_nochoose' title = '保存'></li>
+			<li onclick="downloadImage();" class = 'border_nochoose' title = '下载'><a href="#" download="picture.png"  id="downloadImage_a"></a></li>
+		</ul>
+
+
+		<div class="canvas_container">
+			<canvas id="canvas">
+				浏览器不支持哦，亲
+			</canvas>
+
+			<canvas id="canvas_bak"></canvas>
+		</div>
+		<p class="tip">小提示：可以拖拽传入图片编辑哦~</p>
+
+		<div id="showHistory" class="cf">
+			<h2>绘画保存记录</h2>
+		</div>
+	
+		
+		
+		
+
+
+	
+	
+		<div id="color" class="color">
+            <ul>
+				<li><button onclick="chooseColor(this)" data-value="#000000" style="background: #000000;" class="selected">&nbsp;</button></li>
+				<li><button data-value="#555555" style="background: #555555;">&nbsp;</button></li>
+				<li><button data-value="#999999" style="background: #999999;">&nbsp;</button></li>
+				<li><button data-value="#0a67a3" style="background: #0a67a3;">&nbsp;</button></li>
+				<li><button data-value="#3e97d1" style="background: #3e97d1;">&nbsp;</button></li>
+				<li><button data-value="#8ec9ef" style="background: #8ec9ef;">&nbsp;</button></li>
+				<li><button data-value="#ff0000" style="background: #ff0000;">&nbsp;</button></li>
+				<li><button data-value="#f56c36" style="background: #f56c36;">&nbsp;</button></li>
+				<li><button data-value="#f8a881" style="background: #f8a881;">&nbsp;</button></li>
+				<li><button data-value="#407f1a" style="background: #407f1a;">&nbsp;</button></li>
+				<li><button data-value="#7ed616" style="background: #7ed616;">&nbsp;</button></li>
+				<li><button data-value="#ddec38" style="background: #ddec38;">&nbsp;</button></li>
+				<li><button data-value="#a15f9d" style="background: #a15f9d;">&nbsp;</button></li>
+				<li><button data-value="#f580e3" style="background: #f580e3;">&nbsp;</button></li>
+				<li><button data-value="#ffff00" style="background: #ffff00;">&nbsp;</button></li>
+				<li><button data-value="#8a5025" style="background: #8a5025;">&nbsp;</button></li>
+				<li><button data-value="#ef934d" style="background: #ef934d;">&nbsp;</button></li>
+				<li><button data-value="#ffffff" style="background: #ffffff;">&nbsp;</button></li>
+			</ul>
+        </div>
+
+
+		<div id="line_size"  class = "line_size border_nochoose">
+			<ul>
+				<!-- <li><button data-value="0.5" class="small"><span style="width: 1px; height: 1px;"></span></button></li> -->
+				<li><button data-value="1" class="small"><span style="width: 2px; height: 2px;"></span></button></li>
+				<!-- <li><button data-value="2" class="small"><span style="width: 3px; height: 3px;"></span></button></li> -->
+				<li><button data-value="3" class="small selected"><span style="width: 4px; height: 4px;"></span></button></li>
+				<!-- <li><button data-value="4"><span style="width: 6px; height: 6px;"></span></button></li> -->
+				<li><button data-value="5"><span style="width: 8px; height: 8px;"></span></button></li>
+				<li><button data-value="7"><span style="width: 10px; height: 10px;"></span></button></li>
+				<!-- <li><button data-value="9"><span style="width: 12px; height: 12px;"></span></button></li> -->
+				<!-- <li><button data-value="16"><span style="width: 16px; height: 16px;"></span></button></li> -->
+				<!-- <li><button data-value="32" class="large"><span style="width: 28px; height: 28px;"></span></button></li> -->
+			</ul>
+		</div>
+
+
+
+</div>
+</body>
+</html>
