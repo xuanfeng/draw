@@ -1,9 +1,9 @@
 HTML5绘画板-轩枫阁
 ==========
 
-##demo地址：http://www.xuanfengge.com/funny/html5/draw/
+##demo地址：[轩枫阁](http://www.xuanfengge.com/funny/html5/draw/)
 
-###功能
+###主要功能
 
 - 拖拽上传图片
 - 铅笔绘画
@@ -20,6 +20,7 @@ HTML5绘画板-轩枫阁
 - 清空画板
 - 本地保存
 - 下载图片
+
 
 ###2013/09/18更新
 
