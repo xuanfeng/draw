@@ -47,8 +47,6 @@
 		});
 
 	});		
-
-
 	
 
 	//初始化
@@ -108,7 +106,7 @@
 		$("#line_size").hide();
 	}
 
-	// 填充背景
+	// 填充前景
 	var fill=function(){
 		context.fillStyle= color;
 		context_bak.fillStyle= color;
