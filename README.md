@@ -1,7 +1,7 @@
 HTML5绘画板-轩枫阁
 ==========
 
-##demo地址：[轩枫阁](http://www.xuanfengge.com/funny/html5/draw/)
+##demo地址：[多贝绘画板](http://www.xuanfengge.com/funny/html5/draw/)
 
 ###主要功能
 
