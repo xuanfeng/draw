@@ -86,11 +86,11 @@ var draw_graph = function(graphType,obj){
 	function chooseImg(obj){
 		var imgAry  = $(".draw_controller li");
 		for(var i=0;i<imgAry.length;i++){
-			$(imgAry[i]).removeClass('border_choose');
-			$(imgAry[i]).addClass('border_nochoose');				
+			$(imgAry[i]).removeClass('active');
+			$(imgAry[i]).addClass('normal');				
 		}
-		$(obj).removeClass("border_nochoose");
-		$(obj).addClass("border_choose");
+		$(obj).removeClass("normal");
+		$(obj).addClass("active");
 	}
 
 	// 鼠标移动

@@ -6,15 +6,60 @@
 	$(function(){
 		initCanvas();
 		initDrag();
-		$(".draw_controller li:first").click();
-		$("#color button").click(chooseColor);
+
+		// 绑定绘画板工具
+		$(".pencil").live("click",function(){
+			draw_graph('pencil',this);
+		});
+		$(".handwriting").live("click",function(){
+			draw_graph('handwriting',this);
+		});
+		$(".showLine").live("click",function(){
+			showLineSize(this);
+		});
 		
+		$(".rubber").live("click",function(){
+			draw_graph('rubber',this);
+		});
+		$(".drawLine").live("click",function(){
+			draw_graph('line',this);
+		});
+		$(".square").live("click",function(){
+			draw_graph('square',this);
+		});
+		$(".circle").live("click",function(){
+			draw_graph('circle',this);
+		});
+		$(".fill").live("click",function(){
+			fill(this);
+		});
+		$(".cancel").live("click",function(){
+			cancel(this);
+		});
+		$(".next").live("click",function(){
+			next(this);
+		});
+		$(".clearContext").live("click",function(){
+			clearContext('1');
+		});
+		$(".save").live("click",function(){
+			save();
+			$("body,html").animate({scrollTop:550},200);
+			$(".item:first img").css({"box-shadow":"0 0 10px rgba(248,154,52,0.8)"});
+		});
+		$(".downloadImage").live("click",function(){
+			downloadImage();
+		});
+
+
+		// 初始化铅笔工具
+		$(".draw_controller li:first").click();
+
+		// 选择线条大小
 		$(".line_size button").click(function(){
 			size=$(this).data("value");
 			$("#line_size").hide();
 		});
-
-		
 
 		// 隐藏线条宽度板
 		$(".line").hover(function(){
@@ -31,20 +76,13 @@
 			});
 		});
 
-		// 隐藏颜色板
-		$("#chooseColor").hover(function(){
-			showColor($(this));
-		},function(){
-			var colorshow=setTimeout(function(){
-				$("#color").fadeOut(200);
-			},100);
-			$("#color").hover(function(){
-				$("#color").show();
-				clearTimeout(colorshow);
-			},function(){
-				$("#color").fadeOut(200);
-			});
+		//选择颜色
+		$(".showColor").bigColorpicker(function(el,icolor){
+			color = icolor;
 		});
+		$("#f333").bigColorpicker("f3","L",6);	
+
+		
 
 	});		
 	
@@ -72,14 +110,6 @@
 		$("#downloadImage_a")[0].href=canvas.toDataURL();
 	}
 
-	//展开颜色选择器
-	var showColor = function(obj){
-		var top = $(obj).offset().top+40;
-		var left = $(obj).offset().left-60;		
-		$("#color")[0].style.left = left + "px";;
-		$("#color")[0].style.top = top + "px";
-		$("#color").fadeIn(400);
-	}
 	//展开线条大小选择器
 	var showLineSize = function(obj){
 		if($("#line_size").is(":hidden")){
@@ -91,13 +121,6 @@
 		}else{
 			$("#line_size").hide();
 		}
-	}
-
-	//选择颜色
-	var chooseColor = function(obj){		
-		$("#chooseColor").addClass('border_nochoose');			
-		color = $(this).data("value");
-		$("#color").hide();
 	}
 
 	//选择大小

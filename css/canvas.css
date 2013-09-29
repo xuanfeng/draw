@@ -3,7 +3,9 @@
 	padding: 0;
 }
 
-
+body{
+	/*background: url(../images/agsquare.png) repeat;*/
+}
 
 #logo{
 	float: left;
@@ -32,57 +34,110 @@
 	float: left;
 	width: 30px;
 	height: 30px;
-	border:solid 1px rgb(235, 235, 235);
-	box-shadow:0 0 4px rgba(82, 168, 236, 0.8);
+	box-shadow:0 0 4px #49a4db;
 	margin: 0 10px;
 	cursor: pointer;
 	list-style: none;
+	background-image: url(../images/draw.png);
+	background-color: #FFF;
 	background-repeat: no-repeat;
 	-webkit-transition: all 0.4s ease-in-out;
 }
 
 .draw_controller li:nth-child(1){
-	background-image: url(../images/pencil.png);
+	background-position: 0px 0px;
 }
 .draw_controller li:nth-child(2){
-	background-image: url(../images/handwriting.png);
+	background-position: -30px 0px;
 }
 .draw_controller li:nth-child(3){
-	background-image: url(../images/size.png);
+	background-position: -60px 0px;
 }
 .draw_controller li:nth-child(4){
-	background-image: url(../images/color.png);
+	background-position: -90px 0px;
 }
 .draw_controller li:nth-child(5){
-	background-image: url(../images/rubber.png);
+	background-position: -120px 0px;
 }
 .draw_controller li:nth-child(7){
-	background-image: url(../images/line.png);
+	background-position: -150px 0px;
 }
 .draw_controller li:nth-child(8){
-	background-image: url(../images/square.png);
+	background-position: -180px 0px;
 }
 .draw_controller li:nth-child(9){
-	background-image: url(../images/circle.png);
+	background-position: -210px 0px;
 }
 .draw_controller li:nth-child(10){
-	background-image: url(../images/fill.png);
+	background-position: -240px 0px;
 }
 .draw_controller li:nth-child(12){
-	background-image: url(../images/cancle.png);
+	background-position: -270px 0px;
 }
 .draw_controller li:nth-child(13){
-	background-image: url(../images/next.png);
+	background-position: -300px 0px;
 }
 .draw_controller li:nth-child(14){
-	background-image: url(../images/xx.png);
+	background-position: -330px 0px;
 }
 .draw_controller li:nth-child(15){
-	background-image: url(../images/save.png);
+	background-position: -360px 0px;
 }
 .draw_controller li:nth-child(16){
-	background-image: url(../images/download.png);
+	background-position: -390px 0px;
 }
+
+.draw_controller li:hover{
+	background-color: #49a4db;
+	box-shadow:0 0 4px #99bce2;
+}
+.draw_controller li.active{
+	background-color: #49a4db;
+	box-shadow:0 0 4px #99bce2;
+}
+.draw_controller li:nth-child(1):hover,.draw_controller li:nth-child(1).active{
+	background-position: 0px -30px;
+}
+.draw_controller li:nth-child(2):hover,.draw_controller li:nth-child(2).active{
+	background-position: -30px -30px;
+}
+.draw_controller li:nth-child(3):hover,.draw_controller li:nth-child(3).active{
+	background-position: -60px -30px;
+}
+.draw_controller li:nth-child(4):hover,.draw_controller li:nth-child(4).active{
+	background-position: -90px -30px;
+}
+.draw_controller li:nth-child(5):hover,.draw_controller li:nth-child(5).active{
+	background-position: -120px -30px;
+}
+.draw_controller li:nth-child(7):hover,.draw_controller li:nth-child(7).active{
+	background-position: -150px -30px;
+}
+.draw_controller li:nth-child(8):hover,.draw_controller li:nth-child(8).active{
+	background-position: -180px -30px;
+}
+.draw_controller li:nth-child(9):hover,.draw_controller li:nth-child(9).active{
+	background-position: -210px -30px;
+}
+.draw_controller li:nth-child(10):hover,.draw_controller li:nth-child(10).active{
+	background-position: -240px -30px;
+}
+.draw_controller li:nth-child(12):hover,.draw_controller li:nth-child(12).active{
+	background-position: -270px -30px;
+}
+.draw_controller li:nth-child(13):hover,.draw_controller li:nth-child(13).active{
+	background-position: -300px -30px;
+}
+.draw_controller li:nth-child(14):hover,.draw_controller li:nth-child(14).active{
+	background-position: -330px -30px;
+}
+.draw_controller li:nth-child(15):hover,.draw_controller li:nth-child(15).active{
+	background-position: -360px -30px;
+}
+.draw_controller li:nth-child(16):hover,.draw_controller li:nth-child(16).active{
+	background-position: -390px -30px;
+}
+
 .draw_controller span{
 	float: left;
 	width: 4px;
@@ -91,12 +146,12 @@
 	margin: 0 10px;
 }
 
-.draw_controller .border_nochoose {
+.draw_controller .normal {
 	border-radius: 50%;
 }
 
-.draw_controller .border_choose {
-	border-radius: 0%;
+.draw_controller .active {
+	border-radius: 50%;
 }
 
 

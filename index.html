@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>画图板</title>
-	<script src='js/jquery.js'></script>
-	<script src='js/draw.js'></script>
-	<script src='js/storage.js'></script>
-	<script src='js/main.js'></script>
-	
-	<link href= 'css/canvas.css' type="text/css" rel="Stylesheet"/>
-
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.bigcolorpicker.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/storage.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="css/canvas.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.bigcolorpicker.css" type="text/css" />
 </head>
 <body>
 <div id="draw">
@@ -17,26 +17,26 @@
 		<div id="logo">多贝绘画板</div>
 
 		<ul class="draw_controller cf">
-			<li onclick="draw_graph('pencil',this)" class = 'border_nochoose' title = '铅笔'></li>
-			<li onclick="draw_graph('handwriting',this)" class = 'border_nochoose' title = '涂鸦'></li>
-			<li onclick="showLineSize(this)" class = 'border_nochoose line' title = '线条大小'></li>
-			<li onclick="showColor(this)" class = 'border_nochoose' id="chooseColor" title = '选择颜色'></li>
-			<li onclick="draw_graph('rubber',this)" class = 'border_nochoose' title = '橡皮擦'></li>
+			<li class="normal pencil" title="铅笔"></li>
+			<li class="normal handwriting" title="涂鸦"></li>
+			<li class="normal line showLine" title="线条大小"></li>
+			<li class="normal showColor" id="chooseColor" title="选择颜色"></li>
+			<li class="normal rubber" title="橡皮擦"></li>
 
 			<span>|</span>
 
-			<li onclick="draw_graph('line',this);" class = 'border_nochoose' title = '画直线'></li>
-			<li onclick="draw_graph('square',this)" class = 'border_nochoose' title = '方形'></li>
-			<li onclick="draw_graph('circle',this)" class = 'border_nochoose' title = '圆'></li>
-			<li onclick="fill(this)" class = 'border_nochoose' title = '填充前景'></li>
+			<li class="normal drawLine" title="画直线"></li>
+			<li class="normal square" title="方形"></li>
+			<li class="normal circle" title="圆"></li>
+			<li class="normal fill" title="填充前景"></li>
 
 			<span>|</span>
 
-			<li onclick="cancel(this)" class = 'border_nochoose' title = '撤销上一个操作'></li>
-			<li onclick="next(this)" class = 'border_nochoose' title = '重做上一个操作'></li>	
-			<li onclick="clearContext('1')" class = 'border_nochoose' title = '清屏'></li>
-			<li onclick="save()" class = 'border_nochoose' title = '保存'></li>
-			<li onclick="downloadImage();" class = 'border_nochoose' title = '下载'><a href="#" download="picture.png"  id="downloadImage_a"></a></li>
+			<li class="normal cancel" title="撤销上一个操作"></li>
+			<li class="normal next" title="重做上一个操作"></li>	
+			<li class="normal clearContext" title="清屏"></li>
+			<li class="normal save" title="保存"></li>
+			<li class="normal downloadImage" title="下载"><a href="#" download="picture.png"  id="downloadImage_a"></a></li>
 		</ul>
 
 
@@ -52,39 +52,8 @@
 		<div id="showHistory" class="cf">
 			<h2>绘画保存记录</h2>
 		</div>
-	
-		
-		
-		
 
-
-	
-	
-		<div id="color" class="color">
-            <ul>
-				<li><button onclick="chooseColor(this)" data-value="#000000" style="background: #000000;" class="selected">&nbsp;</button></li>
-				<li><button data-value="#555555" style="background: #555555;">&nbsp;</button></li>
-				<li><button data-value="#999999" style="background: #999999;">&nbsp;</button></li>
-				<li><button data-value="#0a67a3" style="background: #0a67a3;">&nbsp;</button></li>
-				<li><button data-value="#3e97d1" style="background: #3e97d1;">&nbsp;</button></li>
-				<li><button data-value="#8ec9ef" style="background: #8ec9ef;">&nbsp;</button></li>
-				<li><button data-value="#ff0000" style="background: #ff0000;">&nbsp;</button></li>
-				<li><button data-value="#f56c36" style="background: #f56c36;">&nbsp;</button></li>
-				<li><button data-value="#f8a881" style="background: #f8a881;">&nbsp;</button></li>
-				<li><button data-value="#407f1a" style="background: #407f1a;">&nbsp;</button></li>
-				<li><button data-value="#7ed616" style="background: #7ed616;">&nbsp;</button></li>
-				<li><button data-value="#ddec38" style="background: #ddec38;">&nbsp;</button></li>
-				<li><button data-value="#a15f9d" style="background: #a15f9d;">&nbsp;</button></li>
-				<li><button data-value="#f580e3" style="background: #f580e3;">&nbsp;</button></li>
-				<li><button data-value="#ffff00" style="background: #ffff00;">&nbsp;</button></li>
-				<li><button data-value="#8a5025" style="background: #8a5025;">&nbsp;</button></li>
-				<li><button data-value="#ef934d" style="background: #ef934d;">&nbsp;</button></li>
-				<li><button data-value="#ffffff" style="background: #ffffff;">&nbsp;</button></li>
-			</ul>
-        </div>
-
-
-		<div id="line_size"  class = "line_size border_nochoose">
+		<div id="line_size"  class="line_size normal">
 			<ul>
 				<!-- <li><button data-value="0.5" class="small"><span style="width: 1px; height: 1px;"></span></button></li> -->
 				<li><button data-value="1" class="small"><span style="width: 2px; height: 2px;"></span></button></li>
