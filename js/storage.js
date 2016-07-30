@@ -16,7 +16,7 @@ var callBackStorage = function(e){
 
 var initHistorty = function(){
 	// 限制保存25张
-	for(var i=1;i<=25;i++){
+	for(var i=1;i<25;i++){
 		var dataUrl = getStorage(i);
 		if(dataUrl!=null&&dataUrl!=''){
 			item(dataUrl,i);

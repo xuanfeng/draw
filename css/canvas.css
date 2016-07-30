@@ -12,11 +12,14 @@ body{
 	width: 200px;
 	height: 50px;
 	margin-top: 20px;
-	text-indent: 40px;
+	text-indent: 110px;
 	line-height: 44px;
 	font-family: "Microsoft Yahei";
 	font-size: 16px;
-	background: url(../images/logo.png) no-repeat;
+	color: #333;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 .draw_controller{
 	width: 860px;
@@ -41,7 +44,7 @@ body{
 	background-image: url(../images/draw.png);
 	background-color: #FFF;
 	background-repeat: no-repeat;
-	-webkit-transition: all 0.4s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
 }
 
 .draw_controller li:nth-child(1){
@@ -174,13 +177,13 @@ body{
 	background: url(../images/background.png) no-repeat;
 }
 
-canvas{   
+canvas{
 	position: absolute;
 	z-index : 0;
 	left:0px;
 	top:0px;
 	cursor: url(../images/cursor.gif) 2 2,crosshair;
-} 
+}
 
 .color {
 	width : 152px;
@@ -242,7 +245,7 @@ canvas{
 	border: 1px #bbb solid;
 }
 .line_size li{
-	list-style: none;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+	list-style: none;
 }
 .line_size li button{
 	display: block;
@@ -254,7 +257,11 @@ canvas{
 	background: transparent;
 	border: 0;
 	cursor: pointer;
+	outline: none;
 	-webkit-appearance: none;
+}
+.line_size li button.current{
+	background: whitesmoke;
 }
 .line_size li button:hover{
 	background: whitesmoke;
@@ -283,6 +290,9 @@ canvas{
 	line-height: 24px;
 	margin-bottom: 20px;
 }
+#showHistory .item:nth-child(2) img{
+	box-shadow: rgb(51, 153, 204) 0px 0px 10px;
+}
 .item{
 	float: left;
 	width: 225px;
@@ -292,8 +302,8 @@ canvas{
 	width: 225px;
 	height: 136px;
 	/*border:solid 1px #ccc;*/
-	border-style: dashed;    
-	border-width:1px; 
+	border-style: dashed;
+	border-width:1px;
 	border-color: #ccc;
 }
 .item a{
