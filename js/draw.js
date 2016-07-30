@@ -148,12 +148,36 @@ var draw_graph = function(graphType,obj){
 			if(canDraw){
 				// 鼠标点击移动产生的圆圈
 				context_bak.beginPath();	
-				context_bak.strokeStyle = color;
-				context_bak.fillStyle  = color;
-				context_bak.arc(x,y,size*10,0,Math.PI * 2,false);		
+				context_bak.strokeStyle = color;				
+				context_bak.fillStyle = color;
+
+				//计算当前点和上一个点的距离
+				var tmpX = x - startX;
+				var tmpY = y - startY;
+				var dist = Math.sqrt(Math.pow(tmpX, 2) + Math.pow(tmpY, 2));
+				dist = Math.round(dist);
+				
+				//定义递增点
+				var ix = tmpX / dist;
+				var iy = tmpY / dist;
+				
+				//定义绘制点
+				var currX = startX;
+				var currY = startY;
+				for(var i = 0; i < dist; i++) {
+					context_bak.arc(currX, currY, size * 10, 0, Math.PI * 2, false);
+					
+					currX += ix;
+					currY += iy;
+				}				
+				
 				context_bak.fill();
 				context_bak.stroke();
 				context_bak.restore();
+				
+				//保存上一次的点
+				startX = x;
+				startY = y;
 			}else{	
 				clearContext();
 				context_bak.beginPath();		
