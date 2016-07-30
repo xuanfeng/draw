@@ -1,7 +1,7 @@
 HTML5绘画板-轩枫阁
 ==========
 
-##demo地址：[多贝绘画板](http://www.xuanfengge.com/funny/html5/draw/)
+##demo地址：[绘画板](http://www.xuanfengge.com/funny/html5/draw/)
 
 ###主要功能
 
@@ -20,6 +20,13 @@ HTML5绘画板-轩枫阁
 - 清空画板
 - 本地保存
 - 下载图片
+
+
+###2016/07/30更新
+
+	1. 更改为轩枫阁绘画板
+	2. merge解决涂鸦部分点跟点之间的不连续
+	3. merge save 25 images
 
 
 ###2013/09/29更新
